@@ -5,4 +5,7 @@
 <p><%= link_to "edit track", edit_track_url(@track) %></p>
 <p><%= button_to "remove", track_url(@track), method: :delete %></p>
 
+<%= render @track.notes unless @track.notes.empty? %>
+<%= render 'notes/form', track: @track %>
+
 <p><%= link_to "<< Back to tracks", tracks_url %></p>
