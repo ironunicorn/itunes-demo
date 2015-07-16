@@ -1,0 +1,8 @@
+<h1>Tracks</h1>
+<% unless @tracks.empty? %>
+	<% @tracks.each do |track| %> 
+		<p><%= link_to track.name, track_url(track) %></p>
+	<% end %>
+<% end %>
+
+<p><%= link_to "<< Back to albums", albums_url %></p>

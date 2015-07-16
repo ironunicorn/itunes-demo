@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
-
+	before_action :redirect_to_login
+	
 	def new
 		@album = Album.new
 		@band = Band.find(params[:band_id])
@@ -28,9 +29,9 @@ class AlbumsController < ApplicationController
 	end
 
 	def update
-		@album = Album.find
+		@album = Album.find(params[:id])
 		if @album.update(album_params)
-			redirect_to album_url(album)
+			redirect_to album_url(@album)
 		else
 			flash.now[:errors] = @album.errors.full_messages
 			render 'edit'

@@ -1,5 +1,6 @@
 class TracksController < ApplicationController
-
+	before_action :redirect_to_login
+	
 	def new
 		@track = Track.new
 		@album = Album.find(params[:album_id])
@@ -28,9 +29,9 @@ class TracksController < ApplicationController
 	end
 
 	def update
-		@track = Track.find
+		@track = Track.find(params[:id])
 		if @track.update(track_params)
-			redirect_to track_url(track)
+			redirect_to track_url(@track)
 		else
 			flash.now[:errors] = @track.errors.full_messages
 			render 'edit'
@@ -46,6 +47,6 @@ class TracksController < ApplicationController
 	private
 
 	def track_params
-		params.permit(:track).require(:name, :lyrics, :album_id)
+		params.require(:track).permit(:name, :lyrics, :album_id, :bonus)
 	end
 end

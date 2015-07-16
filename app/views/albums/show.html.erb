@@ -4,7 +4,7 @@
 
 <% unless @album.tracks.empty? %>
 	<% @album.tracks.each do |track| %>
-		<%= link_to track.name, track_url(track) %>
+		<p><%= link_to track.name, track_url(track) %></p>
 	<% end %>
 <% end %>
 

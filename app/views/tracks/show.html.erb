@@ -1,0 +1,8 @@
+<h1><%= @track.name %></h1>
+<p><%= @track.bonus ? "Bonus Track" : "" %></p>
+<p><%= @track.lyrics %></p>
+
+<p><%= link_to "edit track", edit_track_url(@track) %></p>
+<p><%= button_to "remove", track_url(@track), method: :delete %></p>
+
+<p><%= link_to "<< Back to tracks", tracks_url %></p>

@@ -1,5 +1,6 @@
 class BandsController < ApplicationController
-
+	before_action :redirect_to_login
+	
 	def new
 		@band = Band.new
 	end
@@ -27,9 +28,9 @@ class BandsController < ApplicationController
 	end
 
 	def update
-		@band = Band.find
+		@band = Band.find(params[:id])
 		if @band.update(band_params)
-			redirect_to band_url(band)
+			redirect_to band_url(@band)
 		else
 			flash.now[:errors] = @band.errors.full_messages
 			render 'edit'
