@@ -7,9 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<nav>
-		<%= button_to("Log Out", session_url, method: :delete) if current_user %>
+<div>
+	<nav>iTunes 
+		<%= button_to("Log Out", session_url, method: :delete) unless current_user.nil? %>
 	</nav>
+</div>
+
+	<%= render 'shared/error_messages' %>
 
 <%= yield %>
 

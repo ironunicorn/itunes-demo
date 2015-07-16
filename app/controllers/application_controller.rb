@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def current_user
-  	@user ||= User.find_by_session_token(session[:session_token])
+  	User.find_by_session_token(session[:session_token])
   end
 
   def log_in_user!(user)

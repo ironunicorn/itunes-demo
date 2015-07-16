@@ -5,8 +5,7 @@
 	<label for="user_email" >email 
 		<input type="text"
 					 id="user_email" 
-					 name="user[email]" 
-					 value="<%= @user.email %>">
+					 name="user[email]">
 	</label>
 	<label for="user_password">password
 		<input type="password"
@@ -15,3 +14,5 @@
 	</label> 
 	<input type="submit" value="Let's go!">
 </form>
+
+<p>New? <%= link_to "Sign up", new_user_url %></p>

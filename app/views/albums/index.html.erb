@@ -1,0 +1,9 @@
+<h1>Albums</h1>
+
+<% unless @albums.empty? %>
+	<% @albums.each do |album| %>
+		<p><%= link_to album.title, album_url(album) %> | <%= album.place %></p>
+	<% end %>
+<% end %>
+
+<%= link_to "<< Back to Bands", bands_url %>
