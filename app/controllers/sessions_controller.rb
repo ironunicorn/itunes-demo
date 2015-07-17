@@ -23,8 +23,4 @@ class SessionsController < ApplicationController
 		session[:session_token] = nil
 		redirect_to new_session_url
 	end
-
-	def user_params
-		params.require(:user).permit(:email, :password)
-	end
 end

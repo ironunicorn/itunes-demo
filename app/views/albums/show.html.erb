@@ -2,10 +2,8 @@
 
 <p><%= link_to "Write Track", new_album_track_url(@album) %></p>
 
-<% unless @album.tracks.empty? %>
-	<% @album.tracks.each do |track| %>
-		<p><%= link_to track.name, track_url(track) %></p>
-	<% end %>
+<% @album.tracks.each do |track| %>
+	<p><%= link_to track.name, track_url(track) %></p>
 <% end %>
 
 <p><%= link_to "edit album", edit_album_url(@album) %></p>

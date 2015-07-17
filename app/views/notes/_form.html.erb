@@ -1,8 +1,8 @@
-<form action="<%= track_notes_url(params[:id]) %>" method="post">
+<form action="<%= track_notes_url(track) %>" method="post">
 	<%= auth_token %> 
-	<input type="hidden" name="note[track_id]" value="<%= params[:id] %>">
-	<label for="text">Notes 
-		<textarea name="note[text]" id="text"></textarea>
+	<input type="hidden" name="note[track_id]" value="<%= track.id %>">
+	<label>Notes 
+		<textarea name="note[text]"></textarea>
 	</label>
 	<br>
 	<input type="submit" value="Make Note">

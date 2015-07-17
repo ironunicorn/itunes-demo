@@ -12,9 +12,9 @@
 		<%= button_to("Log Out", session_url, method: :delete) unless current_user.nil? %>
 	</nav>
 </div>
-
+<div>
 	<%= render 'shared/error_messages' %>
-
+</div>
 <%= yield %>
 
 </body>

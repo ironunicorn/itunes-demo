@@ -1,0 +1,14 @@
+<% action = purpose == "login" ? session_url : users_url %>
+
+<form action="<%= action %>" method="post">
+	<%= auth_token %>
+	<label>email 
+		<input type="text"
+					 name="user[email]">
+	</label>
+	<label>password
+		<input type="password"
+					 name="user[password]">
+	</label> 
+	<input type="submit" value="Let's go!">
+</form>
